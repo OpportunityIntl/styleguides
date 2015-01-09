@@ -19,6 +19,26 @@ Based off [@mdo Code Guide](http://mdo.github.io/code-guide/), which itself is b
 - Avoid specifying units for zero values, e.g., `margin: 0;` instead of `margin: 0px;`.
 - Questions on the terms used here? See the [syntax section of the Cascading Style Sheets article](http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Syntax) on Wikipedia.
 
+```CSS
+/* Bad CSS */
+.selector, .selector-secondary, .selector[type=text] {
+  padding:15px;
+  margin:0px 0px 15px;
+  background-color:rgba(0, 0, 0, 0.5);
+  box-shadow:0px 1px 2px #CCC,inset 0 1px 0 #FFFFFF
+}
+
+/* Good CSS */
+.selector,
+.selector-secondary,
+.selector[type="text"] {
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: rgba(0,0,0,.5);
+  box-shadow: 0 1px 2px #ccc, inset 0 1px 0 #fff;
+}
+```
+
 ##Declaration order
 
 Related property declarations should be grouped together following the order:
@@ -31,7 +51,39 @@ Related property declarations should be grouped together following the order:
 
 Everything else takes place inside the component or without impacting the previous two sections, and thus they come last.
 
-For a complete list of properties and their order, please see Recess.
+For a complete list of properties and their order, please see [Recess](http://twitter.github.com/recess).
+
+```CSS
+.declaration-order {
+  /* Positioning */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+
+  /* Box-model */
+  display: block;
+  float: right;
+  width: 100px;
+  height: 100px;
+
+  /* Typography */
+  font: normal 13px "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+
+  /* Visual */
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+
+  /* Misc */
+  opacity: 1;
+}
+```
 
 ##Don't use `@import`
 
@@ -40,4 +92,20 @@ Compared to `<link>`s, `@import` is slower, adds extra page requests, and can ca
 - Use multiple `<link>` elements
 - Compile your CSS with a preprocessor like Sass or Less into a single file
 - Concatenate your CSS files with features provided in Rails, Jekyll, and other environments
-- For more information, read this article by Steve Souders.
+- For more information, [read this article by Steve Souders](http://www.stevesouders.com/blog/2009/04/09/dont-use-import/).
+
+##Media query placement
+
+Place media queries as close to their relevant rule sets whenever possible. Don't bundle them all in a separate stylesheet or at the end of the document. Doing so only makes it easier for folks to miss them in the future. Here's a typical setup.
+
+```CSS
+.element { ... }
+.element-avatar { ... }
+.element-selected { ... }
+
+@media (min-width: 480px) {
+  .element { ...}
+  .element-avatar { ... }
+  .element-selected { ... }
+}
+```
