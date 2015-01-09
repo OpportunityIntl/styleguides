@@ -41,6 +41,8 @@ Based off [@mdo Code Guide](http://mdo.github.io/code-guide/), which itself is b
 
 ##Declaration order
 
+_Note: not sure how I feel about this section._
+
 Related property declarations should be grouped together following the order:
 
 - Positioning
@@ -182,28 +184,17 @@ The Mozilla Developer Network has a great article on [shorthand properties](http
 
 ##Nesting in Less and Sass
 
-Avoid unnecessary nesting. Just because you can nest, doesn't mean you always should. Consider nesting only if you must scope styles to a parent and if there are multiple elements to be nested.
-
-```CSS
-// Without nesting
-.table > thead > tr > th { … }
-.table > thead > tr > td { … }
-
-// With nesting
-.table > thead > tr {
-  > th { … }
-  > td { … }
-}
-```
+Avoid unnecessary nesting. Just because you can nest, doesn't mean you always should. If you're nesting more than 3 levels deep, you're probably doing something wrong.
 
 ##Comments
+_Add guidelines on comments here_
 
 ##Class names
 
-- Keep classes lowercase and use dashes (not underscores or camelCase). Dashes serve as natural breaks in related class (e.g., .btn and .btn-danger).
-- Avoid excessive and arbitrary shorthand notation. .btn is useful for button, but .s doesn't mean anything.
+- Keep classes lowercase and use dashes (not underscores or camelCase). Dashes serve as natural breaks in related class (e.g., `.btn` and `.btn-danger`).
+- Avoid excessive and arbitrary shorthand notation. `.btn` is useful for button, but `.s` doesn't mean anything.
 - Keep classes as short and succinct as possible.
-- 
+
 It's also useful to apply many of these same rules when creating Sass and Less variable names.
 
 ##Editor preferences
