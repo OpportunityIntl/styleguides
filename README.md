@@ -1,5 +1,5 @@
 # Styleguides
-Keeping our developers all on the same page
+Keeping our developers all on the same page. See respective READMEs for language-specific guides.
 
 ##Comments
 Comment, comment, comment. You might know what your code does now, but you won't remember a year from now, and other developers definitely won't.
