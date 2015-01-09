@@ -179,3 +179,38 @@ The Mozilla Developer Network has a great article on [shorthand properties](http
   border-top-right-radius: 3px;
 }
 ```
+
+##Nesting in Less and Sass
+
+Avoid unnecessary nesting. Just because you can nest, doesn't mean you always should. Consider nesting only if you must scope styles to a parent and if there are multiple elements to be nested.
+
+```CSS
+// Without nesting
+.table > thead > tr > th { … }
+.table > thead > tr > td { … }
+
+// With nesting
+.table > thead > tr {
+  > th { … }
+  > td { … }
+}
+```
+
+##Comments
+
+##Class names
+
+- Keep classes lowercase and use dashes (not underscores or camelCase). Dashes serve as natural breaks in related class (e.g., .btn and .btn-danger).
+- Avoid excessive and arbitrary shorthand notation. .btn is useful for button, but .s doesn't mean anything.
+- Keep classes as short and succinct as possible.
+- 
+It's also useful to apply many of these same rules when creating Sass and Less variable names.
+
+##Editor preferences
+
+Set your editor to the following settings to avoid common code inconsistencies and dirty diffs:
+
+- Use soft-tabs set to two spaces.
+- Trim trailing white space on save.
+- Set encoding to UTF-8.
+- Add new line at end of files.
