@@ -1,6 +1,6 @@
 # JavaScript Style Guide
 
-Based off of AirBbB's styleguide.
+Based off of [AirBbB's JavaScript styleguide](https://github.com/airbnb/javascript).
 
 ## Table of Contents
 
