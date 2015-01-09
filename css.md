@@ -196,12 +196,3 @@ _Add guidelines on comments here_
 - Keep classes as short and succinct as possible.
 
 It's also useful to apply many of these same rules when creating Sass and Less variable names.
-
-##Editor preferences
-
-Set your editor to the following settings to avoid common code inconsistencies and dirty diffs:
-
-- Use soft-tabs set to two spaces.
-- Trim trailing white space on save.
-- Set encoding to UTF-8.
-- Add new line at end of files.
