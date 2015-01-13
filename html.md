@@ -74,6 +74,12 @@ Only use `<br>` tags for soft returns / line breaks. If you're using more than o
   <br>
   Actually, that would be a terrible gift. I won't do that.
 </div>
+
+<!-- Good -->
+<div>
+  <p>If I had a million dollars, well, I'd buy you an exotic pet. Like a llama or an emu.</p>
+  <p>Actually, that would be a terrible gift. I won't do that.</p>
+</div>
 ```
 
 ##Practicality over purity
