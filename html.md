@@ -62,6 +62,20 @@ Per HTML5 spec, typically there is no need to specify a type when including CSS 
 <script src="code-guide.js"></script>
 ```
 
+##Paragraphs and Line Breaks
+
+Only use `<br>` tags for soft returns / line breaks. If you're using more than one `<br>` tag consecutively, you should probably be using a `<p>`.
+
+```HTML
+<!-- Bad -->
+<div>
+  If I had a million dollars, well, I'd buy you an exotic pet. Like a llama or an emu.
+  <br>
+  <br>
+  Actually, that would be a terrible gift. I won't do that.
+</div>
+```
+
 ##Practicality over purity
 
 Strive to maintain HTML standards and semantics, but not at the expense of practicality. Use the least amount of markup with the fewest intricacies whenever possible.
