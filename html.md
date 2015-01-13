@@ -83,4 +83,4 @@ For further reading, consult the [WhatWG section on boolean attributes](http://w
 
 ##JavaScript generated markup
 
-Writing markup in a JavaScript file makes the content harder to find, harder to edit, and less performant. *Avoid it whenever possible.*
+Writing markup in a JavaScript file makes the content harder to find, harder to edit, and less performant. **Avoid it whenever possible.**
