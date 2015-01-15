@@ -1,4 +1,5 @@
 #PHP Style Guide
+Based off [PEAR coding standards](http://pear.php.net/manual/en/standards.php)
 
 ##Syntax
 
