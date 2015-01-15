@@ -11,11 +11,11 @@ These include if, for, while, switch, etc. Here is an example if statement, sinc
 ```PHP
 <?php
 if (condition1 || condition2) {
-    action1;
+  action1;
 } elseif (condition3 && condition4) {
-    action2;
+  action2;
 } else {
-    defaultaction;
+  defaultaction;
 }
 ?>
 ```
@@ -28,17 +28,31 @@ For switch statements:
 ```PHP
 <?php
 switch (condition) {
-case 1:
+  case 1:
     action1;
     break;
 
-case 2:
+  case 2:
     action2;
     break;
 
-default:
+  default:
     defaultaction;
     break;
+}
+?>
+```
+##Function Definitions
+
+No space between the function name and the parentheses. Put a space between arguments, and a space between the closing paraentheses and opening curly brace.
+
+```PHP
+<?php
+function fooFunction($arg1, $arg2 = '') {
+  if (condition) {
+    statement;
+  }
+  return $val;
 }
 ?>
 ```
@@ -72,37 +86,8 @@ To keep readability in functions and methods, it is wise to return early if simp
 
 ```PHP
 <?php
-function foo($bar, $baz)
-{
-    if ($foo) {
-        //assume
-        //that
-        //here
-        //is
-        //the
-        //whole
-        //logic
-        //of
-        //this
-        //method
-        return $calculated_value;
-    } else {
-        return null;
-    }
-}
-?>
-```
-
-It's better to return early, keeping indentation and brain power needed to follow the code low.
-
-```PHP
-<?php
-function foo($bar, $baz)
-{
-    if (!$foo) {
-        return null;
-    }
-
+function foo($bar, $baz) {
+  if ($foo) {
     //assume
     //that
     //here
@@ -114,6 +99,33 @@ function foo($bar, $baz)
     //this
     //method
     return $calculated_value;
+  } else {
+    return null;
+  }
+}
+?>
+```
+
+It's better to return early, keeping indentation and brain power needed to follow the code low.
+
+```PHP
+<?php
+function foo($bar, $baz) {
+  if (!$foo) {
+    return null;
+  }
+
+  //assume
+  //that
+  //here
+  //is
+  //the
+  //whole
+  //logic
+  //of
+  //this
+  //method
+  return $calculated_value;
 }
 ?>
 ```
