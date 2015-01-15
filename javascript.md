@@ -4,6 +4,10 @@ Based off of [AirBbB's JavaScript styleguide](https://github.com/airbnb/javascri
 
 ## Table of Contents
 
+  1. [Whitespace](#whitespace)
+  1. [Commas](#commas)
+  1. [Semicolons](#semicolons)
+  1. [Naming Conventions](#naming-conventions)
   1. [Objects](#objects)
   1. [Arrays](#arrays)
   1. [Strings](#strings)
@@ -13,16 +17,337 @@ Based off of [AirBbB's JavaScript styleguide](https://github.com/airbnb/javascri
   1. [Conditional Expressions & Equality](#conditional-expressions--equality)
   1. [Blocks](#blocks)
   1. [Comments](#comments)
-  1. [Whitespace](#whitespace)
-  1. [Commas](#commas)
-  1. [Semicolons](#semicolons)
-  1. [Naming Conventions](#naming-conventions)
   1. [Accessors](#accessors)
   1. [Constructors](#constructors)
   1. [Events](#events)
   1. [Modules](#modules)
   1. [jQuery](#jquery)
   1. [License](#license)
+
+## Whitespace
+
+  - Use soft tabs set to 2 spaces
+
+    ```javascript
+    // bad
+    function() {
+    ∙∙∙∙var name;
+    }
+
+    // bad
+    function() {
+    ∙var name;
+    }
+
+    // good
+    function() {
+    ∙∙var name;
+    }
+    ```
+
+  - Place 1 space before the leading brace.
+
+    ```javascript
+    // bad
+    function test(){
+      console.log('test');
+    }
+
+    // good
+    function test() {
+      console.log('test');
+    }
+
+    // bad
+    dog.set('attr',{
+      age: '1 year',
+      breed: 'Bernese Mountain Dog'
+    });
+
+    // good
+    dog.set('attr', {
+      age: '1 year',
+      breed: 'Bernese Mountain Dog'
+    });
+    ```
+
+  - Set off operators with spaces.
+
+    ```javascript
+    // bad
+    var x=y+5;
+
+    // good
+    var x = y + 5;
+    ```
+
+  - End files with a single newline character.
+
+    ```javascript
+    // bad
+    (function(global) {
+      // ...stuff...
+    })(this);
+    ```
+
+    ```javascript
+    // bad
+    (function(global) {
+      // ...stuff...
+    })(this);↵
+    ↵
+    ```
+
+    ```javascript
+    // good
+    (function(global) {
+      // ...stuff...
+    })(this);↵
+    ```
+
+  - Use indentation when making long method chains.
+
+    ```javascript
+    // bad
+    $('#items').find('.selected').highlight().end().find('.open').updateCount();
+
+    // good
+    $('#items')
+      .find('.selected')
+        .highlight()
+        .end()
+      .find('.open')
+        .updateCount();
+
+    // bad
+    var leds = stage.selectAll('.led').data(data).enter().append('svg:svg').class('led', true)
+        .attr('width',  (radius + margin) * 2).append('svg:g')
+        .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
+        .call(tron.led);
+
+    // good
+    var leds = stage.selectAll('.led')
+        .data(data)
+      .enter().append('svg:svg')
+        .class('led', true)
+        .attr('width',  (radius + margin) * 2)
+      .append('svg:g')
+        .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
+        .call(tron.led);
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Commas
+
+  - Leading commas: **Nope.**
+
+    ```javascript
+    // bad
+    var story = [
+        once
+      , upon
+      , aTime
+    ];
+
+    // good
+    var story = [
+      once,
+      upon,
+      aTime
+    ];
+
+    // bad
+    var hero = {
+        firstName: 'Bob'
+      , lastName: 'Parr'
+      , heroName: 'Mr. Incredible'
+      , superPower: 'strength'
+    };
+
+    // good
+    var hero = {
+      firstName: 'Bob',
+      lastName: 'Parr',
+      heroName: 'Mr. Incredible',
+      superPower: 'strength'
+    };
+    ```
+
+  - Additional trailing comma: **Nope.** This can cause problems with IE6/7 and IE9 if it's in quirksmode. Also, in some implementations of ES3 would add length to an array if it had an additional trailing comma. This was clarified in ES5 ([source](http://es5.github.io/#D)):
+
+  > Edition 5 clarifies the fact that a trailing comma at the end of an ArrayInitialiser does not add to the length of the array. This is not a semantic change from Edition 3 but some implementations may have previously misinterpreted this.
+
+    ```javascript
+    // bad
+    var hero = {
+      firstName: 'Kevin',
+      lastName: 'Flynn',
+    };
+
+    var heroes = [
+      'Batman',
+      'Superman',
+    ];
+
+    // good
+    var hero = {
+      firstName: 'Kevin',
+      lastName: 'Flynn'
+    };
+
+    var heroes = [
+      'Batman',
+      'Superman'
+    ];
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+
+## Semicolons
+
+  - **Yup.**
+
+    ```javascript
+    // bad
+    (function() {
+      var name = 'Skywalker'
+      return name
+    })()
+
+    // good
+    (function() {
+      var name = 'Skywalker';
+      return name;
+    })();
+
+    // good (guards against the function becoming an argument when two files with IIFEs are concatenated)
+    ;(function() {
+      var name = 'Skywalker';
+      return name;
+    })();
+    ```
+
+    [Read more](http://stackoverflow.com/a/7365214/1712802).
+
+**[⬆ back to top](#table-of-contents)**
+
+
+
+## Naming Conventions
+
+  - Avoid single letter names. Be descriptive with your naming.
+
+    ```javascript
+    // bad
+    function q() {
+      // ...stuff...
+    }
+
+    // good
+    function query() {
+      // ..stuff..
+    }
+    ```
+
+  - Use camelCase when naming objects, functions, and instances
+
+    ```javascript
+    // bad
+    var OBJEcttsssss = {};
+    var this_is_my_object = {};
+    function c() {}
+    var u = new user({
+      name: 'Bob Parr'
+    });
+
+    // good
+    var thisIsMyObject = {};
+    function thisIsMyFunction() {}
+    var user = new User({
+      name: 'Bob Parr'
+    });
+    ```
+
+  - Use PascalCase when naming constructors or classes
+
+    ```javascript
+    // bad
+    function user(options) {
+      this.name = options.name;
+    }
+
+    var bad = new user({
+      name: 'nope'
+    });
+
+    // good
+    function User(options) {
+      this.name = options.name;
+    }
+
+    var good = new User({
+      name: 'yup'
+    });
+    ```
+
+  - Use a leading underscore `_` when naming private properties
+
+    ```javascript
+    // bad
+    this.__firstName__ = 'Panda';
+    this.firstName_ = 'Panda';
+
+    // good
+    this._firstName = 'Panda';
+    ```
+
+  - When saving a reference to `this` use `_this`.
+
+    ```javascript
+    // bad
+    function() {
+      var self = this;
+      return function() {
+        console.log(self);
+      };
+    }
+
+    // bad
+    function() {
+      var that = this;
+      return function() {
+        console.log(that);
+      };
+    }
+
+    // good
+    function() {
+      var _this = this;
+      return function() {
+        console.log(_this);
+      };
+    }
+    ```
+
+  - Name your functions. This is helpful for stack traces.
+
+    ```javascript
+    // bad
+    var log = function(msg) {
+      console.log(msg);
+    };
+
+    // good
+    var log = function log(msg) {
+      console.log(msg);
+    };
+    ```
+
+  - **Note:** IE8 and below exhibit some quirks with named function expressions.  See [http://kangax.github.io/nfe/](http://kangax.github.io/nfe/) for more info.
+
+**[⬆ back to top](#table-of-contents)**
 
 ## Objects
 
@@ -590,332 +915,6 @@ Based off of [AirBbB's JavaScript styleguide](https://github.com/airbnb/javascri
       return this;
     }
   ```
-
-**[⬆ back to top](#table-of-contents)**
-
-
-## Whitespace
-
-  - Use soft tabs set to 2 spaces
-
-    ```javascript
-    // bad
-    function() {
-    ∙∙∙∙var name;
-    }
-
-    // bad
-    function() {
-    ∙var name;
-    }
-
-    // good
-    function() {
-    ∙∙var name;
-    }
-    ```
-
-  - Place 1 space before the leading brace.
-
-    ```javascript
-    // bad
-    function test(){
-      console.log('test');
-    }
-
-    // good
-    function test() {
-      console.log('test');
-    }
-
-    // bad
-    dog.set('attr',{
-      age: '1 year',
-      breed: 'Bernese Mountain Dog'
-    });
-
-    // good
-    dog.set('attr', {
-      age: '1 year',
-      breed: 'Bernese Mountain Dog'
-    });
-    ```
-
-  - Set off operators with spaces.
-
-    ```javascript
-    // bad
-    var x=y+5;
-
-    // good
-    var x = y + 5;
-    ```
-
-  - End files with a single newline character.
-
-    ```javascript
-    // bad
-    (function(global) {
-      // ...stuff...
-    })(this);
-    ```
-
-    ```javascript
-    // bad
-    (function(global) {
-      // ...stuff...
-    })(this);↵
-    ↵
-    ```
-
-    ```javascript
-    // good
-    (function(global) {
-      // ...stuff...
-    })(this);↵
-    ```
-
-  - Use indentation when making long method chains.
-
-    ```javascript
-    // bad
-    $('#items').find('.selected').highlight().end().find('.open').updateCount();
-
-    // good
-    $('#items')
-      .find('.selected')
-        .highlight()
-        .end()
-      .find('.open')
-        .updateCount();
-
-    // bad
-    var leds = stage.selectAll('.led').data(data).enter().append('svg:svg').class('led', true)
-        .attr('width',  (radius + margin) * 2).append('svg:g')
-        .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
-        .call(tron.led);
-
-    // good
-    var leds = stage.selectAll('.led')
-        .data(data)
-      .enter().append('svg:svg')
-        .class('led', true)
-        .attr('width',  (radius + margin) * 2)
-      .append('svg:g')
-        .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
-        .call(tron.led);
-    ```
-
-**[⬆ back to top](#table-of-contents)**
-
-## Commas
-
-  - Leading commas: **Nope.**
-
-    ```javascript
-    // bad
-    var story = [
-        once
-      , upon
-      , aTime
-    ];
-
-    // good
-    var story = [
-      once,
-      upon,
-      aTime
-    ];
-
-    // bad
-    var hero = {
-        firstName: 'Bob'
-      , lastName: 'Parr'
-      , heroName: 'Mr. Incredible'
-      , superPower: 'strength'
-    };
-
-    // good
-    var hero = {
-      firstName: 'Bob',
-      lastName: 'Parr',
-      heroName: 'Mr. Incredible',
-      superPower: 'strength'
-    };
-    ```
-
-  - Additional trailing comma: **Nope.** This can cause problems with IE6/7 and IE9 if it's in quirksmode. Also, in some implementations of ES3 would add length to an array if it had an additional trailing comma. This was clarified in ES5 ([source](http://es5.github.io/#D)):
-
-  > Edition 5 clarifies the fact that a trailing comma at the end of an ArrayInitialiser does not add to the length of the array. This is not a semantic change from Edition 3 but some implementations may have previously misinterpreted this.
-
-    ```javascript
-    // bad
-    var hero = {
-      firstName: 'Kevin',
-      lastName: 'Flynn',
-    };
-
-    var heroes = [
-      'Batman',
-      'Superman',
-    ];
-
-    // good
-    var hero = {
-      firstName: 'Kevin',
-      lastName: 'Flynn'
-    };
-
-    var heroes = [
-      'Batman',
-      'Superman'
-    ];
-    ```
-
-**[⬆ back to top](#table-of-contents)**
-
-
-## Semicolons
-
-  - **Yup.**
-
-    ```javascript
-    // bad
-    (function() {
-      var name = 'Skywalker'
-      return name
-    })()
-
-    // good
-    (function() {
-      var name = 'Skywalker';
-      return name;
-    })();
-
-    // good (guards against the function becoming an argument when two files with IIFEs are concatenated)
-    ;(function() {
-      var name = 'Skywalker';
-      return name;
-    })();
-    ```
-
-    [Read more](http://stackoverflow.com/a/7365214/1712802).
-
-**[⬆ back to top](#table-of-contents)**
-
-
-
-## Naming Conventions
-
-  - Avoid single letter names. Be descriptive with your naming.
-
-    ```javascript
-    // bad
-    function q() {
-      // ...stuff...
-    }
-
-    // good
-    function query() {
-      // ..stuff..
-    }
-    ```
-
-  - Use camelCase when naming objects, functions, and instances
-
-    ```javascript
-    // bad
-    var OBJEcttsssss = {};
-    var this_is_my_object = {};
-    function c() {}
-    var u = new user({
-      name: 'Bob Parr'
-    });
-
-    // good
-    var thisIsMyObject = {};
-    function thisIsMyFunction() {}
-    var user = new User({
-      name: 'Bob Parr'
-    });
-    ```
-
-  - Use PascalCase when naming constructors or classes
-
-    ```javascript
-    // bad
-    function user(options) {
-      this.name = options.name;
-    }
-
-    var bad = new user({
-      name: 'nope'
-    });
-
-    // good
-    function User(options) {
-      this.name = options.name;
-    }
-
-    var good = new User({
-      name: 'yup'
-    });
-    ```
-
-  - Use a leading underscore `_` when naming private properties
-
-    ```javascript
-    // bad
-    this.__firstName__ = 'Panda';
-    this.firstName_ = 'Panda';
-
-    // good
-    this._firstName = 'Panda';
-    ```
-
-  - When saving a reference to `this` use `_this`.
-
-    ```javascript
-    // bad
-    function() {
-      var self = this;
-      return function() {
-        console.log(self);
-      };
-    }
-
-    // bad
-    function() {
-      var that = this;
-      return function() {
-        console.log(that);
-      };
-    }
-
-    // good
-    function() {
-      var _this = this;
-      return function() {
-        console.log(_this);
-      };
-    }
-    ```
-
-  - Name your functions. This is helpful for stack traces.
-
-    ```javascript
-    // bad
-    var log = function(msg) {
-      console.log(msg);
-    };
-
-    // good
-    var log = function log(msg) {
-      console.log(msg);
-    };
-    ```
-
-  - **Note:** IE8 and below exhibit some quirks with named function expressions.  See [http://kangax.github.io/nfe/](http://kangax.github.io/nfe/) for more info.
 
 **[⬆ back to top](#table-of-contents)**
 
