@@ -6,7 +6,7 @@
 
 ##Control Structures
 
-These include if, for, while, switch, etc. Here is an example if statement, since it is the most complicated of them:
+These include `if`, `for`, `while`, `switch`, etc. Here is an example if statement, since it is the most complicated of them:
 
 ```PHP
 <?php
