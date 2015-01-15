@@ -186,9 +186,6 @@ The Mozilla Developer Network has a great article on [shorthand properties](http
 
 Avoid unnecessary nesting. Just because you can nest, doesn't mean you always should. If you're nesting more than 3 levels deep, you're probably doing something wrong.
 
-##Comments
-_Add guidelines on comments here_
-
 ##Class names
 
 - Keep classes lowercase and use dashes (not underscores or camelCase). Dashes serve as natural breaks in related class (e.g., `.btn` and `.btn-danger`).
