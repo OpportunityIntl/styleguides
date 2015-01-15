@@ -4,10 +4,10 @@ Based off [@mdo Code Guide](http://mdo.github.io/code-guide/), which itself is b
 
 ##Syntax
 
-- Use soft tabs with two spaces — they're the only way to guarantee code renders the same in any environment.
+- Use soft tabs with two spaces. Soft tabs are the only way to guarantee code renders the same in any environment. Two spaces is a matter of preference, but [I'm the decider](https://i.chzbgr.com/maxW500/1353310976/h52166690/).
 - Nested elements should be indented once (two spaces).
-- Always use double quotes, never single quotes, on attributes.
-- Don’t omit optional closing tags (e.g. `</li>` or `</body>`).
+- Use double quotes, not single quotes, on attributes. There's no significant advantage of using one over the other, but we need to be consistent.
+- Don't omit optional closing tags (e.g. `</li>` or `</body>`).
 
 ##HTML5 doctype
 
@@ -64,7 +64,7 @@ Per HTML5 spec, typically there is no need to specify a type when including CSS 
 
 ##Paragraphs and Line Breaks
 
-Only use `<br>` tags for soft returns / line breaks. If you're using more than one `<br>` tag consecutively, you should probably be using a `<p>`.
+Only use `<br>` tags for soft returns / line breaks. If you're using more than one `<br>` tag consecutively, you should probably be using a `<p>`. If you're using `<br>` tags for spacing, you should probably be using a CSS class to set a margin.
 
 ```HTML
 <!-- Bad -->
