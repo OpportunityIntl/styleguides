@@ -4,7 +4,7 @@ Based off [@mdo Code Guide](http://mdo.github.io/code-guide/), which itself is b
 
 ##Syntax
 
-- Use soft tabs with two spaces. Soft tabs are the only way to guarantee code renders the same in any environment. Two spaces is a matter of preference, but [I'm the decider](https://i.chzbgr.com/maxW500/1353310976/h52166690/).
+- Use soft tabs with two spaces.
 - Nested elements should be indented once (two spaces).
 - Use double quotes, not single quotes, on attributes. There's no significant advantage of using one over the other, but we need to be consistent.
 - Don't omit optional closing tags (e.g. `</li>` or `</body>`).
