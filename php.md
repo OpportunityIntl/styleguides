@@ -83,7 +83,9 @@ Anywhere you are unconditionally including a class file, use require_once. Anywh
 - Constants should always be all-uppercase, with underscores to separate words.
 
 ##Return early
-To keep readability in functions and methods, it is wise to return early if simple conditions apply that can be checked at the beginning of a method:
+To keep readability in functions and methods, it is wise to return early if simple conditions apply that can be checked at the beginning of a method. This can keep indentation and the brain power needed to follow the code low.
+
+Instead of:
 
 ```PHP
 <?php
@@ -107,7 +109,7 @@ function foo($bar, $baz) {
 ?>
 ```
 
-It's better to return early, keeping indentation and brain power needed to follow the code low.
+do this:
 
 ```PHP
 <?php
