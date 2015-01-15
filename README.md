@@ -12,6 +12,6 @@ Comment, comment, comment. You might know what your code does now, but you won't
 
 Using consistent editor settings will prevent dirty diffs.
 
-- Use soft-tabs set to 2 spaces.
+- Use soft-tabs set to 2 spaces. Soft tabs are the only way to guarantee code renders the same in any environment. Two spaces is a matter of preference, but [I'm the decider](https://i.chzbgr.com/maxW500/1353310976/h52166690/).
 - Add new line at end of files (many IDEs do this automatically)
 - Use UTF8 encoding
