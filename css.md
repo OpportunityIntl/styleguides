@@ -41,19 +41,18 @@ Based off [@mdo Code Guide](http://mdo.github.io/code-guide/), which itself is b
 
 ##Declaration order
 
-_Note: not sure how I feel about this section._
-
-Related property declarations should be grouped together following the order:
+Related property declarations should be grouped together. The following order is suggested:
 
 - Positioning
 - Box model
 - Typographic
 - Visual
-- Positioning comes first because it can remove an element from the normal flow of the document and override box model related styles. The box model comes next as it dictates a component's dimensions and placement.
 
-Everything else takes place inside the component or without impacting the previous two sections, and thus they come last.
+_Positioning comes first because it can remove an element from the normal flow of the document and override box model related styles. The box model comes next as it dictates a component's dimensions and placement._
 
-For a complete list of properties and their order, please see [Recess](http://twitter.github.com/recess).
+_Everything else takes place inside the component or without impacting the previous two sections, and thus they come last._
+
+_For a complete list of properties and their order, please see [Recess](http://twitter.github.com/recess)._
 
 ```CSS
 .declaration-order {
@@ -86,6 +85,8 @@ For a complete list of properties and their order, please see [Recess](http://tw
   opacity: 1;
 }
 ```
+
+The comments in the example above are for clarification purposes. No need to put them in your stylesheets unless a ruleset is particularly long.
 
 ##Don't use `@import`
 
