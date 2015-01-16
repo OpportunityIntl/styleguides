@@ -74,11 +74,11 @@ $var = foo($bar, $baz, $quux);
 
 ##Including Code
 
-Anywhere you are unconditionally including a class file, use require_once. Anywhere you are conditionally including a class file (for example, factory methods), use include_once. Either of these will ensure that class files are included only once. They share the same file list, so you don't need to worry about mixing them - a file included with require_once will not be included again by include_once.
+Anywhere you are unconditionally including a class file, use `require_once`. Anywhere you are conditionally including a class file (for example, factory methods), use `include_once`. Either of these will ensure that class files are included only once. They share the same file list, so you don't need to worry about mixing them - a file included with `require_once` will not be included again by `include_once`.
 
 ##Naming Conventions
 
-- Class names should start with a captial and use underscores to separate words: `Log`, `Net_Finger`, `HTML_Upload_Error`.
+- Class names should start with a captial and use underscores to separate words: `Bear`, `Form_Validator`.
 - Variables and methods should use camelCase.
 - Constants should always be all-uppercase, with underscores to separate words.
 
