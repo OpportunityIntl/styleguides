@@ -1,7 +1,7 @@
 #Ruby Style Guide
 Adapted from [GitHub Ruby styleguide](https://github.com/styleguide/ruby), itself influenced by [bbatsov's ruby-style-guid](https://github.com/bbatsov/ruby-style-guide)
 
-If you're working in OptINnow, you'll notice that Opportunity isn't following any consistent styles. The app has passed through several Rails versions and developers, so the code is all over the place. Moving forward, let's adhere to the styles.
+If you're working in OptINnow, you'll notice that Opportunity isn't following any consistent styles. The app has passed through several Rails versions and developers, so the code is all over the place. Moving forward, let's adhere to these styles.
 
 
 ##Coding style
