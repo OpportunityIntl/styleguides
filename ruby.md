@@ -16,7 +16,7 @@ a, b = 1, 2
 [1, 2, 3].each { |e| puts e }
 ```
 
-- No spaces after `(`, `[` or beore `]`, `)`
+- No spaces after `(`, `[` or before `]`, `)`
 
 ```ruby
 some(arg).other
@@ -49,7 +49,7 @@ def some_method_with_arguments(arg1, arg2)
 end
 ```
 
-- Never use for, unless you know exactly why. Most of the time iterators should be used instead. for is implemented in terms of each (so you're adding a level of indirection), but with a twist - for doesn't introduce a new scope (unlike each) and variables defined in its block will be visible outside it.
+- Never use `for`, unless you know exactly why. Most of the time iterators should be used instead. `for` is implemented in terms of `each` (so you're adding a level of indirection), but with a twist - `for` doesn't introduce a new scope (unlike `each`) and variables defined in its block will be visible outside it.
 
 ```ruby
 arr = [1, 2, 3]
@@ -117,7 +117,7 @@ names.select do |name|
 end.map { |name| name.upcase }
 ```
 
-- Avoid return where not required.
+- Avoid `return` where not required.
 ```ruby
 # bad
 def some_method(some_arr)
